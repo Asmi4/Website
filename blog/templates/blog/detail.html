@@ -13,7 +13,6 @@
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Favicons -->
 
 
     <style>
@@ -36,7 +35,8 @@
     <link href="album.css" rel="stylesheet">
   </head>
   <body>
-    <header>
+
+   <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="{%url 'home' %}">Asmita Suman</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,43 +54,22 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>Hi!! I am Asmita</h1>
-      <p class="lead text-muted">Hey! My name is Asmita S. and I love learning new stuff! Welcome to my website!</p>
-      <p>
-        <a href="mailto:suman.asmita0408@gmail.com" class="btn btn-primary my-2">Email </a>
+<br/>
+    <br/>
+     <hr/>
 
-      </p>
-      <!--<img src="{% static 'me.png'%}" height=150 width=150/>-->
-    </div>
-  </section>
-  <hr/>
-  <div class="text-center">
-   <p class="lead text-muted">Oh Well!! These are just my favourite animes. :D</p>
-  </div>
-  <div class="album py-5 bg-light">
+      <h1 class="text-center ">{{blog.title}}</h1>
 
-    <div class="container">
+        <p class="text=center">{{blog.pub_date}}</p>
+      <br/>
+      <img class="img-fluid" src="{{blog.image.url}}" height =200 width=200/>
+      <br/>
+        <br/>
 
-      <div class="row">
-          {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src= "{{job.image.url }}" />
-              <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-            </div>
-          </div>
-        </div>
-          {% endfor %}
-
+      <p>{{blog.body}}</p>
 
       </div>
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-muted">
